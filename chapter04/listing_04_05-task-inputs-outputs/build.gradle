@@ -21,8 +21,8 @@ ProjectVersion readVersion() {
 }
 
 task makeReleaseVersion(group: 'versioning', description: 'Makes project a release version.') {
-    inputs.property('release', version.release)
-    outputs.file versionFile
+    inputs.property('release', version.release)//声明版本的release属性作为输入
+    outputs.file versionFile//由于版本文件被修改，所以它被声明作为输出文件属性
 
     doLast {
         version.release = true

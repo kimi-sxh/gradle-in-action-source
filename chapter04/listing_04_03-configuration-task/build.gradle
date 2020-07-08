@@ -1,6 +1,7 @@
 ext.versionFile = file('version.properties')
 
 task loadVersion {
+    //定义task配置块 永远在task动作之前执行
     project.version = readVersion()
 }
 

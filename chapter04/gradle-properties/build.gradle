@@ -1,5 +1,7 @@
 assert project.exampleProp == 'myValue'
 
-task printGradleProperty << {
-    println "Second property: $someOtherProp"
+task printGradleProperty {
+    doLast {
+        println "Second property: $someOtherProp"
+    }
 }

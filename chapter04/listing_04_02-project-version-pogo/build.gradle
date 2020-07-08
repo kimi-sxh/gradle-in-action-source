@@ -1,4 +1,4 @@
-version = new ProjectVersion(0, 1)
+version = new ProjectVersion(0, 2)
 
 class ProjectVersion {
     Integer major

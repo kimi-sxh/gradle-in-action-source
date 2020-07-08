@@ -29,13 +29,13 @@ task makeReleaseVersion(group: 'versioning', description: 'Makes project a relea
 }
 
 task createDistribution(type: Zip, dependsOn: makeReleaseVersion) {
-    from war.outputs.files
+    from war.outputs.files//隐式应用war task输出
 
-    from(sourceSets*.allSource) {
+    from(sourceSets*.allSource) {//把所有源文件都放到zip的src目录下
         into 'src'
     }
 
-    from(rootDir) {
+    from(rootDir) {//为zip添加版本文件
         include versionFile.name
     }
 }
